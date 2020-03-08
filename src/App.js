@@ -33,12 +33,21 @@ function App() {
   return (
     <>
       <header className="logo-wrapper">
-        <button className="logo" onClick={() => setSVG(logosvg)}>
+        <button
+          name="logo"
+          type="button"
+          className="logo"
+          onClick={() => setSVG(logosvg)}
+        >
           <Logo />
         </button>
       </header>
       <main className="app">
+        <label className="screenreader" htmlFor="textearea">
+          Insert SVG Code
+        </label>
         <textarea
+          id="textearea"
           defaultValue={svg}
           onChange={e => setSVG(e.target.value)}
           placeholder="Paste your SVG here or click on the logo for an example"
@@ -50,7 +59,11 @@ function App() {
             onClick={setCopied}
           ></Code>
           <div css={encodeSVG(svg)} className="show"></div>
-          <button className="toast" onClick={setCopied}>
+          <button
+            name={`${isCopied ? "Copied" : "Copy"} to Clipboard`}
+            className="toast"
+            onClick={setCopied}
+          >
             {isCopied ? "Copied" : "Copy"} to Clipboard
           </button>
         </section>
