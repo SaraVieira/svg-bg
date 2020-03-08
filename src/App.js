@@ -32,9 +32,11 @@ function App() {
   });
   return (
     <>
-      <button className="logo" onClick={() => setSVG(logosvg)}>
-        <Logo />
-      </button>
+      <header className="logo-wrapper">
+        <button className="logo" onClick={() => setSVG(logosvg)}>
+          <Logo />
+        </button>
+      </header>
       <main className="app">
         <textarea
           defaultValue={svg}
@@ -47,7 +49,6 @@ function App() {
             code={encodeSVG(svg) || `/* your css will be here */`}
             onClick={setCopied}
           ></Code>
-          <button className="toast"></button>
           <div css={encodeSVG(svg)} className="show"></div>
           <button className="toast" onClick={setCopied}>
             {isCopied ? "Copied" : "Copy"} to Clipboard

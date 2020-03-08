@@ -45,6 +45,7 @@ section {
   position: relative;
   color: rgb(248, 248, 242);
   background-color: rgb(40, 42, 54);
+  overflow: scroll;
 }
 
 .toast {
@@ -64,6 +65,8 @@ section {
   grid-template-columns: 50% 50%;
   margin: auto;
   margin-top: 30px;
+  max-height: calc(100vh - 133px);
+  overflow: hidden;
 }
 
 .show {
@@ -74,12 +77,16 @@ section {
   background-repeat: no-repeat;
   background-position-x: 30px;
   background-position-y: 100%;
+  background-size: 70px;
+}
+
+.logo-wrapper {
+  padding-top: 30px;
 }
 
 .logo {
   display: block;
   margin: auto;
-  margin-top: 30px;
   padding: 0;
   border: none;
   background: transparent;
